@@ -1,11 +1,12 @@
 {
-  "name": "senior-enrichment",
+  "name": "SEP",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack -w & nodemon main.js -e html,js,css --ignore public"
+    "start:dev": "webpack -w & nodemon main.js -e html,js,css --ignore public",
+    "seed": "node seed.js"
   },
   "keywords": [],
   "author": "",

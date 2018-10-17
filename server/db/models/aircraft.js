@@ -1,5 +1,3 @@
-'use strict';
-
 const Sequelize = require('sequelize');
 const db = require('../_db');
 
@@ -29,9 +27,6 @@ const Aircraft = db.define('aircraft', {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    get: function (value) {
-      this.setDataValue('GFI', '$' + value + ',000,000')
-    },
     validate: {
       notEmpty: true,
       isUrl: true
