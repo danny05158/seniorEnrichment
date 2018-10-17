@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import loggingMiddleware from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
-import thunkMiddleware from 'redux-thunk'; // https://github.com/gaearon/redux-thunk
+import thunkMiddleware from 'redux-thunk';
+// https://github.com/gaearon/redux-thunk
 import axios from 'axios';
 
 //action types
@@ -23,7 +24,7 @@ export const getAircraftsFromServer = aircrafts => ({
 export const getCountries = () => {
   return async dispatch => {
     try {
-      const { data } = await axios.get('/api/countries');
+      const { data } = await axios.get('/api/countries/');
       dispatch(getCountriesFromServer(data));
     } catch (err) {
       console.log(err);
@@ -53,6 +54,8 @@ const reducer = (state = initialState, action) => {
       return { ...state, countries: action.countries };
     case GET_AIRCRAFTS_FROM_SERVER:
       return { ...state, aircrafts: action.aircrafts };
+    default:
+      return state;
   }
 };
 
