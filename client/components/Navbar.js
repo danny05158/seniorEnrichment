@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-class Navbar extends Component {
-  render() {
-    return (
-      <div>
-
-      </div>
-    );
-  }
-}
+const Navbar = props => {
+  return (
+    <div id="navbar">
+      <Link to="/countries">Countries</Link>
+      <Link to="/aircrafts">Aircrafts</Link>
+    </div>
+  );
+};
 
 export default Navbar;

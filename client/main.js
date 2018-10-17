@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Main } from './components/Main';
+import  Root  from './components/Root';
 
 import store from './store';
-import Root from './components/Root';
+// import Root1 from './components/Root1';
 
 // render(
 //   <Provider store={store}>
