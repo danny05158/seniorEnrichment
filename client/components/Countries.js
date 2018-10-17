@@ -21,7 +21,6 @@ class Countries extends Component {
     this.props.getCountries()
   }
   render() {
-    console.log("HERE", this.props)
     return (
       this.props.countries.map(country =>
         <Country key={country.id} country={country} />)

@@ -6,7 +6,7 @@ const  Country  = require('../db/models/country');
 router.get('/', async (req, res, next) => {
   try {
     let aircraft = await Aircraft.findAll({
-      include: [Country]
+      include: [{model: Country}]
     });
     res.json(aircraft);
   } catch (err) {
@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:aircraftId', async (req, res, next) => {
   try {
     let result = await Aircraft.findById(req.params.aircraftId, {
-      include: [Country]
+      include: [{model: Country}]
     });
     res.json(result);
   } catch (err) {

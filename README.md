@@ -13,7 +13,7 @@ Make a thing **again**!
 ## Requirements
 
 ### The Premise
- Design a website for aircraft fanatics 🤓 and create a RESTful API that allows you to manage these aircrafts! 
+ Design a website for aircraft fanatics 🤓 and create a RESTful API that allows you to manage these aircrafts!
 
 ### The tools
 
@@ -46,9 +46,9 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
 ### Views and Functionality
 
 - Navigation: as a user I...
-  * will land on **Home** by default
-  * can navigate to **Countries** from **Home**
-  * can navigate to **Aircrafts** from **Home**
+  * will land on **Home** by default   x          (put a background img!)
+  * can navigate to **Countries** from **Home** x
+  * can navigate to **Aircrafts** from **Home** x
   * can navigate to view a top 5 **Single Country** from **Home** (see `Views` below for more details)
   * can navigate to view a **Single Country** from **Countries**
   * can navigate to view a **Single Aircraft** from **Aircrafts**
@@ -58,7 +58,8 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
 - Views: as a user I...
   * see a navbar in every view
   * see a scoreboard of the top 5 countries, in order, measured by GFI (Global Firepower Index - 0 is strongest(top), 10 is the weakest(bottom)) on the **Home** view
-  * see a list of all countries on the **Countries** view
+
+  * see a list of all countries on the **Countries** view x
   * see a list of all aircrafts on the **Aircrafts** view
   * see details about a country on the **Single Country** view, including that country's aircrafts
   * see details about an aircraft on the **Single Aircraft** view, including that aircrafts' country
@@ -74,7 +75,7 @@ Use at least Sequelize, Express, React, Redux, and React-Redux when creating thi
 ### Routes
 
 ```
-GET 
+GET
 - all countries
   - populated with aircrafts
 - a country by id
@@ -111,7 +112,7 @@ DELETE
 
 ### How to test functionality without a frontend
 - GET: use your browser
-- POST / PUT / DELETE : 
+- POST / PUT / DELETE :
  - CLI (command line interface) with `curl`
    - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
    - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
@@ -134,4 +135,5 @@ Once you've recorded your screencast, please *upload it to YouTube as an unliste
 - Routes (25%)
 - Frontend logic and functionality (25%)
 - Design + Bonus features (up to 10 Extra Credit points)
+
 
