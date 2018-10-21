@@ -3,15 +3,9 @@ import { connect } from 'react-redux';
 import {upDateAircraft } from '../store';
 import axios from 'axios';
 
-// const mapStateToProps = state => {
-//   return {
-//     singleAircraft: state.singleAircraft,
-//   };
-// };
 
 const mapDispachToProps = dispatch => {
   return {
-    // getSingleAircraft: aircraftId => dispatch(getSingleAircraft(aircraftId)),
     upDateAircraft: (aircraftId, aircraft) => dispatch(upDateAircraft(aircraftId, aircraft)),
   };
 };
@@ -33,10 +27,7 @@ class UpdateAircraft extends Component {
   }
   async componentDidMount() {
     const aircraftId = this.props.match.params.aircraftId;
-    // this.props.getSingleAircraft(aircraftId);
-
     const { data } = await axios.put(`/api/aircrafts/updateAircraft/${aircraftId}`);
-    // console.log("after axios", data)
     this.setState({
       make: data.make,
       model: data.model,
@@ -50,23 +41,19 @@ class UpdateAircraft extends Component {
   }
 
   handleChange(event) {
-    //set state based on values being changed on the form
     event.preventDefault();
-    // let field = [event.target.name]
-
     this.setState({
-      [event.target.name]: event.target.value //|| this.props.singleAircraft[event.target.name]
+      [event.target.name]: event.target.value
     });
   }
   handleSubmit(event) {
-    //once the button submits dispatch an action to api put route
     const aircraftId = this.props.match.params.aircraftId
     event.preventDefault();
     this.props.upDateAircraft(aircraftId, this.state);
+    this.props.history.push('/aircrafts');
   }
 
   render() {
-    // console.log("IN THE COMPONENT", this.state)
     let aircraft = this.state;
 
     return (

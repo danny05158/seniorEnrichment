@@ -3,17 +3,9 @@ import {connect} from 'react-redux';
 import {upDateCountry} from '../store'
 import axios from 'axios';
 
-// const mapStateToProps = state => {
-//   return {
-//     singleCountry: state.singleCountry
-//   }
-// }
-
 const mapDispatchToProps = dispatch => {
   return {
     upDateCountry: (countryId, country) => dispatch(upDateCountry(countryId, country)),
-    // getCountry: (countryId => dispatch(getCountry(countryId)))
-
   }
 }
 
@@ -32,7 +24,6 @@ class UpdateCountry extends Component {
 
   async componentDidMount(){
     const countryId = this.props.match.params.countryId;
-    // this.props.getCountry(countryId);
     const {data} = await axios.put(`/api/countries/updateCountry/${countryId}`)
     this.setState({
       name: data.name,
@@ -53,6 +44,8 @@ class UpdateCountry extends Component {
     const countryId = this.props.match.params.countryId
     event.preventDefault();
     this.props.upDateCountry(countryId, this.state);
+    this.props.history.push('/countries');
+
   }
 
   render() {
@@ -60,7 +53,7 @@ class UpdateCountry extends Component {
     return (
       <React.Fragment>
       <img id="countryImg" src={country.flagUrl}/>
-      <form id="createCountryForm" onSubmit={this.handleSubmit}>
+      <form id="createAirForm" onSubmit={this.handleSubmit}>
       <div id="container">
         <h1>Update Country Fields</h1>
 
@@ -70,6 +63,7 @@ class UpdateCountry extends Component {
         <input
         type="text"
         name="name"
+        className="createAircraftInput"
         value={this.state.name}
         placeholder={country.name}
         onChange={this.handleChange}
@@ -81,6 +75,7 @@ class UpdateCountry extends Component {
         <input
          type="text"
          name="flagUrl"
+         className="createAircraftInput"
          placeholder={country.flagUrl}
          value={this.state.flagUrl}
          onChange={this.handleChange}
@@ -100,7 +95,7 @@ class UpdateCountry extends Component {
           <option value="10" name="10">10</option>
         </select>
       </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="button" >Submit</button>
       </form>
       </React.Fragment>
     );

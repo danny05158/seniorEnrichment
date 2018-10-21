@@ -25,7 +25,7 @@ class Countries extends Component {
     return (
       <div>
         <NavLink to="/countries/createCountry">
-           <button id="createCountryButton"
+           <button className="buttons"
            type="submit">Create a Country
            </button>
         </NavLink>

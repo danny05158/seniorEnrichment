@@ -8,6 +8,7 @@ router.get('/', async (req, res, next) => {
     let result = await Country.findAll({
       include: {model: Aircraft}
     });
+    console.log("IN THE API ROUTE", Country)
     res.json(result);
   } catch (err) {
     console.log(err);
@@ -45,7 +46,6 @@ router.put('/updateCountry/:countryId', async (req, res, next) => {
   try {
     let country = await Country.findById(req.params.countryId);
     let result = await country.update(req.body);
-    console.log("IN THE BACK END", result)
     res.json(result);
   } catch (err) {
     console.log(err);

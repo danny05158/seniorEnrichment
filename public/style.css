@@ -5,6 +5,7 @@
   color: gray;
   align-items: center;
   justify-content: space-evenly;
+  border-radius: 30px;
 }
 
 .row {
@@ -43,6 +44,7 @@ input[type=text] {
   display: inline-block;
   border: none;
   background: #f1f1f1;
+  display: grid;
 }
 
 /* #createAirFrom {
@@ -50,3 +52,38 @@ input[type=text] {
     width: 30rem;
     max-width: 100%;
 } */
+
+#createAirForm {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.createAircraftInput {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 18px;
+  padding: 10px 30px 9px 22px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.button {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+    border-radius: 25px;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.buttons {
+  border-radius: 15px;
+}

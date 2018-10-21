@@ -32,8 +32,9 @@ const Aircraft = db.define('aircraft', {
     type: Sequelize.STRING,
     validate: {
       notEmpty: true,
-      isUrl: true
-    }
+      // isUrl: true
+    },
+    defaultValue: ''
   },
   type: {
     type: Sequelize.ENUM,

@@ -27,7 +27,7 @@ class Aircrafts extends Component {
     return (
       <div>
         <NavLink to="/aircrafts/createAircraft">
-          <button id="createAircraftButton" type="submit">Create a Aircraft</button>
+          <button className="buttons" type="submit">Create a Aircraft</button>
         </NavLink>
         {
           this.props.aircrafts.map(aircraft =>

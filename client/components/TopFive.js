@@ -23,14 +23,14 @@ class TopFive extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div>
         <h1 id="welcomeHeader">Welcome to Aircraft Fanatics Website!</h1>
-        <h2>Below is the Scoreboard of the Top 5 Countries based on GFI</h2>
+        <h2> Top Scoreboard of the Top 5 Countries based on GFI</h2>
         {
             this.props.topFive.map(country => (
             <Country key={country.id} country={country} />))
         }
-      </React.Fragment>
+      </div>
     );
   }
 }

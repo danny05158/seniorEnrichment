@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import loggingMiddleware from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
 import thunkMiddleware from 'redux-thunk';
+import {push} from 'react-router-dom';
 // https://github.com/gaearon/redux-thunk
 import axios from 'axios';
 
@@ -117,6 +118,7 @@ export const topFive = () => {
   return async dispatch => {
     try {
       const { data } = await axios.get('/api/countries/top5');
+      console.log("IN THE THUNK", data)
       dispatch(getTopFive(data));
     } catch (err) {
       console.log(err);
@@ -151,6 +153,7 @@ export const createAircraft = aircraft => {
     try {
       const { data } = await axios.post('/api/aircrafts', aircraft);
       dispatch(createSingleAircraft(data));
+      this.props.history.push('/aircrafts');
     } catch (err) {
       console.log(err);
     }
@@ -162,6 +165,7 @@ export const deleteCountry = countryId => {
     try {
       const { data } = await axios.delete(`/api/countries/${countryId}`);
       dispatch(deleteSingleCountry(data));
+      // this.props.history.push('/countries');
     } catch (err) {
       console.log(err);
     }
@@ -173,6 +177,7 @@ export const deleteAircraft = aircraftId => {
     try {
       const { data } = await axios.delete(`/api/aircrafts/${aircraftId}`);
       dispatch(deleteSingleAircraft(data));
+      // this.props.history.push('/aircrafts');
     } catch (err) {
       console.log(err);
     }
@@ -184,6 +189,7 @@ export const upDateCountry = (countryId, country) => {
     try {
       const { data } = await axios.put(`/api/countries/updateCountry/${countryId}`, country);
       dispatch(updateSingleCountry(data));
+      this.props.history.push('/countries');
     } catch (err) {
       console.log(err);
     }
@@ -195,6 +201,7 @@ export const upDateAircraft = (aircraftId, aircraft) => {
     try {
       const { data } = await axios.put(`/api/aircrafts/updateAircraft/${aircraftId}`, aircraft);
       dispatch(updateAircraft(data));
+      this.props.history.push('/aircrafts');
     } catch (err) {
       console.log(err);
     }

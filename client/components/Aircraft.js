@@ -14,8 +14,9 @@ export const  Aircraft = (props) => {
     <div>
 
       <img id="aircraftImg" src={props.aircraft.imageUrl} />
+
       <NavLink to={`/aircrafts/${props.aircraft.id}`}>
-      <h3>Make: {props.aircraft.make}</h3>
+      <h3>{props.aircraft.make}</h3>
       </NavLink>
       <h3>Model: {props.aircraft.model}</h3>
       <h3>Year: {props.aircraft.year} </h3>
@@ -24,14 +25,16 @@ export const  Aircraft = (props) => {
       <h3>Description: {props.aircraft.description}</h3>
 
       <NavLink to={`/aircrafts/updateAircraft/${props.aircraft.id}`}>
-       <button id="UpdateAircraft" type="submit">Update Aircraft</button>
+       <button className="buttons" id="UpdateAircraft" type="submit">Update Aircraft</button>
       </NavLink>
       <button
-        id="delete"
         type="submit"
-        onClick={(event)=>{
+        className="buttons"
+        onClick={(event)=> {
           event.preventDefault()
           props.deleteAircraft(props.aircraft.id)
+          props.history.push('/aircrafts');
+
         }}> Delete Aircraft
       </button>
     </div>

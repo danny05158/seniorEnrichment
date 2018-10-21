@@ -10,10 +10,7 @@ const Country = db.define('country', {
     },
   },
   GFI: {
-    type: Sequelize.INTEGER,
-    // get: function(val) {
-    //   this.setDataValue('GFI', '$', +val + '000,000');
-    // },
+    type: Sequelize.INTEGER
   },
   flagUrl: {
     type: Sequelize.STRING,
