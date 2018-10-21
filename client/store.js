@@ -177,7 +177,6 @@ export const deleteAircraft = aircraftId => {
     try {
       const { data } = await axios.delete(`/api/aircrafts/${aircraftId}`);
       dispatch(deleteSingleAircraft(data));
-      // this.props.history.push('/aircrafts');
     } catch (err) {
       console.log(err);
     }

@@ -63,8 +63,7 @@ class CreateCountry extends Component {
             placeholder="flagUrl"
             className="createAircraftInput"
             onChange={this.handleChange}
-            required
-          />
+            />
 
           <b>Global Firepower Index decimal between 0 - 10 </b>
           <select name="GFI" onChange={this.handleChange}>

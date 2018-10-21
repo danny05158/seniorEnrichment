@@ -8,7 +8,6 @@ router.get('/', async (req, res, next) => {
     let result = await Country.findAll({
       include: {model: Aircraft}
     });
-    console.log("IN THE API ROUTE", Country)
     res.json(result);
   } catch (err) {
     console.log(err);
