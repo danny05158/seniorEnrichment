@@ -15,13 +15,38 @@
 #countryName {
   width: 100%;
   height: 50px;
-  color: gray;
   align-items: center;
   justify-content: space-evenly;
 }
 
 #countryImg {
-  width: 50%;
-  height: 50%;
+  width: 20%;
+  height: 20%;
   align-items: center;
 }
+
+#aircraftImg {
+  width: 40%;
+  height: 40%;
+  align-items: center;
+}
+
+/* #createAirForm {
+  border:1px
+  solid #ccc
+} */
+/* Full-width input fields */
+input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* #createAirFrom {
+  flex: 1 0 30rem;
+    width: 30rem;
+    max-width: 100%;
+} */

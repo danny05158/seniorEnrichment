@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Country from './Country'
 import {getCountries} from '../store'
+import {Link, NavLink} from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
@@ -22,8 +23,17 @@ class Countries extends Component {
   }
   render() {
     return (
-      this.props.countries.map(country =>
-        <Country key={country.id} country={country} />)
+      <div>
+        <NavLink to="/countries/createCountry">
+           <button id="createCountryButton"
+           type="submit">Create a Country
+           </button>
+        </NavLink>
+        {
+          this.props.countries.map(country =>
+            <Country key={country.id} country={country} />)
+        }
+      </div>
     )
   }
 }

@@ -7,7 +7,7 @@ const db = require('../db/_db')
 	// Ideally you would have something to handle this, so if you have time try that out!
 
 router.use('/countries', require('./countries'))
-router.use('/aircraft', require('./aircraft'))
+router.use('/aircrafts', require('./aircraft'))
 // apiRouter.get('/hello', (req, res) => res.send({hello: 'world'}))
 
 // You can put all routes in this file; HOWEVER, this file should almost be like a table of contents for the routers you create
