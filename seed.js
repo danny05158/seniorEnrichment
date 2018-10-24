@@ -1,6 +1,9 @@
-const db = require('./server/db/_db')
-const Aircraft = require('./server/db/models/aircraft')
-const Country = require('./server/db/models/country')
+// const db = require('./server/db/_db')
+const {Aircraft} = require('./server/db/models')
+const {Country} = require('./server/db/models')
+
+//new
+const {db} = require('./server/db/_db')
 
 const aircraftList = [{
   make: 'Lockheed Martin',

@@ -3,12 +3,13 @@ const router = express.Router()
 const  {Aircraft}  = require('../db/models');
 const  {Country}  = require('../db/models');
 
+
 router.get('/', async (req, res, next) => {
   try {
-    let aircraft = await Aircraft.findAll({
+    let aircrafts = await Aircraft.findAll({
       include: {model: Country}
     });
-    res.json(aircraft);
+    res.json(aircrafts);
   } catch (err) {
     console.log(err);
   }

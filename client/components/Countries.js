@@ -22,6 +22,7 @@ class Countries extends Component {
     this.props.getCountries()
   }
   render() {
+    // console.log("Here", this.props.Countries)
     return (
       <div>
         <NavLink to="/countries/createCountry">

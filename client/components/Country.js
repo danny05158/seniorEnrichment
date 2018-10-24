@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {deleteCountry} from '../store'
+import Aircraft from './Aircraft'
+//{props.country.aircraft}
 
 export const Country = (props) => {
+  //  console.log("Here2", props.country)
     return (
       <div>
           <img id="countryImg" src={props.country.flagUrl} />
@@ -26,6 +29,19 @@ export const Country = (props) => {
           }}
           >Delete Country
          </button>
+
+
+          <div>
+           <h3>Aircrafts: </h3>
+           {
+             props.country.aircraft ? props.country.aircraft.map(aircraft =>
+               <Aircraft key={aircraft.id} aircraft={aircraft} />) :
+              // console.log("Mapping", aircraft)) :
+              <h3>No Aircrafts</h3>
+          }
+        </div>
+
+
       </div>
     );
 }

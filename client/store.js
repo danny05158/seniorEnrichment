@@ -118,7 +118,6 @@ export const topFive = () => {
   return async dispatch => {
     try {
       const { data } = await axios.get('/api/countries/top5');
-      console.log("IN THE THUNK", data)
       dispatch(getTopFive(data));
     } catch (err) {
       console.log(err);
@@ -165,7 +164,6 @@ export const deleteCountry = countryId => {
     try {
       const { data } = await axios.delete(`/api/countries/${countryId}`);
       dispatch(deleteSingleCountry(data));
-      // this.props.history.push('/countries');
     } catch (err) {
       console.log(err);
     }

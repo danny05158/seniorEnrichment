@@ -1,22 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const  Country  = require('../db/models/country');
-const  Aircraft  = require('../db/models/aircraft');
+const  {Country}  = require('../db/models');
+const  {Aircraft}  = require('../db/models');
 
 router.get('/', async (req, res, next) => {
   try {
     let result = await Country.findAll({
       include: {model: Aircraft}
     });
-    res.json(result);
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-router.post('/', async (req, res, next) => {
-  try {
-    let result = await Country.create(req.body);
     res.json(result);
   } catch (err) {
     console.log(err);
@@ -34,12 +25,25 @@ router.get('/top5', async (req, res, next) => {
 
 router.get('/:countryId', async (req, res, next) => {
   try {
-    let result = await Country.findById(req.params.countryId);
+    let result = await Country.findById(req.params.countryId, {
+      include: {model: Aircraft}
+    });
     res.json(result);
   } catch (err) {
     console.log(err);
   }
 });
+
+router.post('/', async (req, res, next) => {
+  try {
+    let result = await Country.create(req.body);
+    res.json(result);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+
 
 router.put('/updateCountry/:countryId', async (req, res, next) => {
   try {
@@ -51,7 +55,6 @@ router.put('/updateCountry/:countryId', async (req, res, next) => {
   }
 });
 
-//re-write this route to inclde the where clause in the destroy
 router.delete('/:countryId', async (req, res, next) => {
   try {
     let country = await Country.findById(req.params.countryId);

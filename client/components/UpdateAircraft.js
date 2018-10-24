@@ -136,7 +136,6 @@ class UpdateAircraft extends Component {
             value={this.state.cost}
 
             />
-
           <label>
             <b>Image Url:</b>
           </label>
@@ -157,9 +156,7 @@ class UpdateAircraft extends Component {
             placeholder={aircraft.description}
             onChange={this.handleChange}
             value={this.state.description}
-
             />
-
           <button id="createAirBtn " type="submit">
             Submit
           </button>

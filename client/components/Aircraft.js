@@ -28,9 +28,9 @@ export const  Aircraft = (props) => {
        <button className="buttons" id="UpdateAircraft" type="submit">Update Aircraft</button>
       </NavLink>
       <button
-        type="submit"
-        className="buttons"
-        onClick={(event)=> {
+          type="submit"
+         className="buttons"
+          onClick={(event)=> {
           event.preventDefault()
           props.deleteAircraft(props.aircraft.id)
           props.history.push('/aircrafts');

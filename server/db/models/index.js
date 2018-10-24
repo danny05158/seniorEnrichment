@@ -1,6 +1,8 @@
 // Require all the models
 const Country = require('./country')
 const Aircraft = require('./aircraft')
+const {db} = require('../_db')
+
 
 // Running each model (i.e. table) module (i.e. file) registers each model into our sequelize db
 	// This works if we all use the same Sequelize instance (instantiated in and exported from `/db/_db.js`)
@@ -11,6 +13,7 @@ Aircraft.belongsTo(Country);
 Country.hasMany(Aircraft)
 
 module.exports = {
+	db,
 	Country,
 	Aircraft,
 }

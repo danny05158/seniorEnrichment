@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
-const db = require('../_db');
+const {db} = require('../_db');
+//new destructure db
+
 
 const Aircraft = db.define('aircraft', {
   make: {
@@ -24,15 +26,14 @@ const Aircraft = db.define('aircraft', {
   },
   cost: {
     type: Sequelize.DECIMAL,
-    // get() {
-    //   return this.getDataValue('cost') + 'm';
-    // }
+    get() {
+      return this.getDataValue('cost') + 'm';
+    }
   },
   imageUrl: {
     type: Sequelize.STRING,
     validate: {
-      notEmpty: true,
-      // isUrl: true
+      notEmpty: true
     },
     defaultValue: ''
   },

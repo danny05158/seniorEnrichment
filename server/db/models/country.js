@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
-const db = require('../_db');
+const {db} = require('../_db');
+//new destructure db
 
 const Country = db.define('country', {
   name: {

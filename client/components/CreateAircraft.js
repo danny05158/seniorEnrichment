@@ -21,7 +21,6 @@ class CreateAircraft extends Component {
       type: 'Attack', //default type
       description: '',
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -138,7 +137,6 @@ class CreateAircraft extends Component {
               Rescue
             </option>
           </select>
-
           <button type="submit" className="button">
             Submit
           </button>
