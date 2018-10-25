@@ -43,7 +43,7 @@ class CreateAircraft extends Component {
       <form id="createAirForm" onSubmit={this.handleSubmit}>
         <div id="container">
           <h1>Create an Aircraft</h1>
-          <p>Please fill in this form with Aircraft specifications.</p>
+          <p>Fill this form with Aircraft specifications.</p>
 
           <label>
             <b>Make:</b>
@@ -82,7 +82,7 @@ class CreateAircraft extends Component {
           />
 
           <label>
-            <b>Cost: (in Millions)</b>
+            <b>Cost: (in Mil)</b>
           </label>
           <input
             type="text"

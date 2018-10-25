@@ -59,6 +59,61 @@ const aircraftList = [{
   imageUrl: '/images/A-10.jpg',
   description: 'You wont look back once you buy this bad boy',
   countryId: 1
+} ,{
+    make: 'Northrup 755',
+    model: 'A-10',
+    year: 1980,
+    type: 'Attack',
+    cost: 5000,
+    imageUrl: '/images/Sub748.jpg',
+    description: 'You wont look back once you buy this bad boy',
+    countryId: 3
+}, {
+    make: 'Grumman',
+    model: 'Warthog',
+    year: 1986,
+    type: 'Attack',
+    cost: 5000,
+    imageUrl: '/images/Boeing754.jpg',
+    description: 'You wont look back once you buy this bad boy',
+    countryId: 4
+} , {
+      make: 'Grumman',
+      model: 'A-Warthog',
+      year: 2000,
+      type: 'Attack',
+      cost: 5000,
+      imageUrl: '/images/F-16.jpg',
+      description: 'You wont look back once you buy this bad boy',
+      countryId: 1
+} , {
+  make: 'Grumman',
+  model: 'A1600-Warthog',
+  year: 2000,
+  type: 'Attack',
+  cost: 5000,
+  imageUrl: '/images/Boeing754.jpg',
+  description: 'You wont look back once you buy this bad boy',
+  countryId: 2
+} , {
+  make: 'Lockheed',
+  model: 'Warthog',
+  year: 2016,
+  type: 'Attack',
+  cost: 5000,
+  imageUrl: '/images/Lockheed Martin 2000.jpg',
+  description: 'You wont look back once you buy this bad boy',
+  countryId: 2
+} , {
+
+  make: 'Lockheed-2100',
+  model: 'Warthog',
+  year: 2016,
+  type: 'Attack',
+  cost: 5000,
+  imageUrl: '/images/sweeden.jpg',
+  description: 'You wont look back once you buy this bad boy',
+  countryId: 3
 }];
 
 const countriesList = [{
