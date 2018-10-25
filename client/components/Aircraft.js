@@ -23,7 +23,11 @@ export const  Aircraft = (props) => {
       <h3>Cost: {props.aircraft.cost} Million </h3>
       <h3>Type: {props.aircraft.type}</h3>
       <h3>Description: {props.aircraft.description}</h3>
-
+      {
+        props.aircraft.country ?
+        <h3>{props.aircraft.country.name}</h3> :
+        <div />
+      }
       <NavLink to={`/aircrafts/updateAircraft/${props.aircraft.id}`}>
        <button className="buttons" id="UpdateAircraft" type="submit">Update Aircraft</button>
       </NavLink>

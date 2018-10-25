@@ -6,10 +6,11 @@ import Aircraft from './Aircraft'
 //{props.country.aircraft}
 
 export const Country = (props) => {
-  //  console.log("Here2", props.country)
+    // console.log("Here2", props.country.aircraft)
     return (
       <div>
           <img id="countryImg" src={props.country.flagUrl} />
+
           <NavLink to={`/countries/${props.country.id}`}>
            <h3>{props.country.name}</h3>
           </NavLink>
@@ -18,30 +19,27 @@ export const Country = (props) => {
          <NavLink to={`/countries/updateCountry/${props.country.id}`}>
            <button className="buttons" id="UpdateButton" type="submit">Update Country</button>
          </NavLink>
+         <NavLink to="/aircrafts/createAircraft">
+          <button className="buttons" type="submit">Create a Aircraft</button>
+         </NavLink>
          <button
            className="buttons"
           type="submit"
           onClick={(event) => {
             event.preventDefault()
             props.deleteCountry(props.country.id)
-            // props.history.push('/countries');
-
           }}
           >Delete Country
          </button>
-
-
-          <div>
+         <div>
            <h3>Aircrafts: </h3>
            {
-             props.country.aircraft ? props.country.aircraft.map(aircraft =>
-               <Aircraft key={aircraft.id} aircraft={aircraft} />) :
-              // console.log("Mapping", aircraft)) :
-              <h3>No Aircrafts</h3>
+              props.country.aircraft ?
+              props.country.aircraft.map(aircraft =>
+                <Aircraft key={aircraft.id} aircraft={aircraft} />) :
+              <h3>{props.country.name} is not interested in planes!</h3>
           }
-        </div>
-
-
+      </div>
       </div>
     );
 }

@@ -24,10 +24,11 @@ class SingleCountry extends Component {
   }
 
   render() {
+    // let country = this.props.singleCountry;
     let country = this.props.singleCountry;
     return (
       <div>
-        <Country country={country} />
+         <Country country={country} />
       </div>
     );
   }
