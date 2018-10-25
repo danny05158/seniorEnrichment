@@ -16,7 +16,9 @@ router.get('/', async (req, res, next) => {
 
 router.get('/top5', async (req, res, next) => {
   try {
-    let result = await Country.getTopFive();
+    let result = await Country.getTopFive({
+      include: {model: Aircraft}
+    });
     res.json(result);
   } catch (err) {
     console.log(err);
@@ -42,8 +44,6 @@ router.post('/', async (req, res, next) => {
     console.log(err);
   }
 });
-
-
 
 router.put('/updateCountry/:countryId', async (req, res, next) => {
   try {
