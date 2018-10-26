@@ -2,7 +2,6 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import loggingMiddleware from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
 import thunkMiddleware from 'redux-thunk';
-import {push} from 'react-router-dom';
 // https://github.com/gaearon/redux-thunk
 import axios from 'axios';
 
@@ -75,7 +74,7 @@ const updateSingleCountry = country => ({
   country,
 });
 
-const updateAircraft = aircraft => ({
+const updateSingleAircraft = aircraft => ({
   type: UPDATE_AIRCRAFT,
   aircraft,
 });
@@ -196,8 +195,9 @@ export const upDateCountry = (countryId, country) => {
 export const upDateAircraft = (aircraftId, aircraft) => {
   return async dispatch => {
     try {
+      console.log("In the thunk", aircraft)
       const { data } = await axios.put(`/api/aircrafts/updateAircraft/${aircraftId}`, aircraft);
-      dispatch(updateAircraft(data));
+      dispatch(updateSingleAircraft(data));
       this.props.history.push('/aircrafts');
     } catch (err) {
       console.log(err);
@@ -235,7 +235,6 @@ const reducer = (state = initialState, action) => {
         return aircraft.id === action.aircraft.id
         ? action.aircraft : aircraft
       })
-      console.log("IN THE REDUCER", updatedAircraftArr)
         return {...state, aircrafts: updatedAircraftArr}
 
 

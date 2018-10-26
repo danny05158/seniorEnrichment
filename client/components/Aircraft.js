@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { deleteAircraft } from '../store';
 import { connect } from 'react-redux';
@@ -12,9 +12,21 @@ const mapDispatchToProps = dispach => {
 export const Aircraft = props => {
   if (props.aircraftMake) {
     return (
-      <Link to={`/aircrafts/${props.aircraftMake.id}`} >
-        <h3>{props.aircraftMake.make}</h3>
-      </Link>
+      <React.Fragment>
+        <Link to={`/aircrafts/${props.aircraftMake.id}`}>
+          <h3>{props.aircraftMake.make}</h3>
+        </Link>
+        <button
+          type="submit"
+          className="buttons"
+          onClick={event => {
+            event.preventDefault();
+            props.deleteAircraft(props.aircraftMake.id);
+          }}
+        >
+          Delete
+        </button>
+      </React.Fragment>
     );
   }
   return (
@@ -47,7 +59,7 @@ export const Aircraft = props => {
           props.history.push('/aircrafts');
         }}
       >
-      Delete Aircraft
+        Delete Aircraft
       </button>
     </div>
   );

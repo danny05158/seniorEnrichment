@@ -11,7 +11,6 @@ const mapDispatchToProps = dispatch => {
 class CreateAircraft extends Component {
   constructor() {
     super();
-
     this.state = {
       make: '',
       model: '',
@@ -82,7 +81,7 @@ class CreateAircraft extends Component {
           />
 
           <label>
-            <b>Cost: (in Mil)</b>
+            <b>Cost: (in Mill)</b>
           </label>
           <input
             type="text"

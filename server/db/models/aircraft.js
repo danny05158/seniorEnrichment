@@ -21,6 +21,7 @@ const Aircraft = db.define('aircraft', {
   year: {
     type: Sequelize.INTEGER,
     validate: {
+      max: 2018,
       min: 1903
     },
   },

@@ -1,12 +1,11 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deleteCountry } from '../store';
 import Aircraft from './Aircraft';
-import {Card, CardImg, Button, Row, Col} from 'reactstrap'
+import { Card, CardImg } from 'reactstrap';
 
 export const Country = props => {
-
   if (!props.country.aircraft) {
     return (
       <Card>
@@ -52,14 +51,10 @@ export const Country = props => {
       <div>
         {props.country.aircraft.length ? (
           props.country.aircraft.map(aircraft => (
-             <Aircraft key={aircraft.id} aircraftMake={aircraft} />
-            // console.log("Here", aircraft)
-              // <Link to={`/aircrafts/${aircraft.id}`} key={aircraft.id}>
-              // {aircraft.make}
-              // </Link>
+            <Aircraft key={aircraft.id} aircraftMake={aircraft} />
           ))
         ) : (
-          <h3>{props.country.name} is not interested in planes!</h3>
+          <h3>{props.country.name} Does not have planes!</h3>
         )}
       </div>
     </div>

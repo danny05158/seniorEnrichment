@@ -49,6 +49,7 @@ class UpdateAircraft extends Component {
   handleSubmit(event) {
     const aircraftId = this.props.match.params.aircraftId
     event.preventDefault();
+    console.log("Here", this.state)
     this.props.upDateAircraft(aircraftId, this.state);
     this.props.history.push('/aircrafts');
   }
