@@ -28,7 +28,7 @@ export default class Root extends Component {
 
               <Route exact path="/aircrafts" component={Aircrafts} />
               <Route path="/aircrafts/updateAircraft/:aircraftId" component={UpdateAircraft} />
-              <Route  exact path="/aircrafts/createAircraft" component={CreateAircraft} />
+              <Route path="/aircrafts/createAircraft" component={CreateAircraft} />
               <Route path="/aircrafts/:aircraftId" component={SingleAircraft} />
             </Switch>
           </main>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deleteCountry } from '../store';
 import Aircraft from './Aircraft';
@@ -20,11 +20,12 @@ export const Country = props => {
   return (
     <div>
       <img id="countryImg" src={props.country.flagUrl} />
-
       <Link to={`/countries/${props.country.id}`}>
         <h3>{props.country.name}</h3>
       </Link>
-      <h3>GRI: {props.country.GFI}</h3>
+      <span>
+        <h3>GRI: {props.country.GFI}</h3>
+      </span>
 
       <Link to={`/countries/updateCountry/${props.country.id}`}>
         <button className="buttons" id="UpdateButton" type="submit">
@@ -32,11 +33,11 @@ export const Country = props => {
         </button>
       </Link>
 
-      <Link to="/aircrafts/createAircraft">
+      <NavLink to={`/aircrafts/createAircraft/${props.country.id}`}>
         <button className="buttons" type="submit">
           Create a Aircraft
         </button>
-      </Link>
+      </NavLink>
       <button
         className="buttons"
         type="submit"
@@ -47,7 +48,6 @@ export const Country = props => {
       >
         Delete Country
       </button>
-      <h3>Aircrafts: </h3>
       <div>
         {props.country.aircraft.length ? (
           props.country.aircraft.map(aircraft => (

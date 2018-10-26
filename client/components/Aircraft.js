@@ -56,7 +56,6 @@ export const Aircraft = props => {
         onClick={event => {
           event.preventDefault();
           props.deleteAircraft(props.aircraft.id);
-          props.history.push('/aircrafts');
         }}
       >
         Delete Aircraft

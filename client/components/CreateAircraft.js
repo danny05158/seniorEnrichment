@@ -19,6 +19,7 @@ class CreateAircraft extends Component {
       imageUrl: '',
       type: 'Attack', //default type
       description: '',
+      countryId: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -36,7 +37,6 @@ class CreateAircraft extends Component {
       [event.target.name]: event.target.value,
     });
   }
-
   render() {
     return (
       <form id="createAirForm" onSubmit={this.handleSubmit}>
