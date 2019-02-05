@@ -4,6 +4,9 @@ import Country from './Country';
 import { getCountries } from '../store';
 import { Link, NavLink } from 'react-router-dom';
 
+//IMPORTS FROM GROMMET
+import { Box, Grid, Heading } from 'grommet';
+
 const mapStateToProps = state => {
   return {
     countries: state.countries,
@@ -28,9 +31,14 @@ class Countries extends Component {
             Create a Country
           </button>
         </Link>
-        {this.props.countries.map(country => (
-          <Country key={country.id} country={country} />
-        ))}
+
+        <Box pad="large">
+          <Grid columns="small" gap="small">
+            {this.props.countries.map(country => (
+              <Country key={country.id} country={country} />
+            ))}
+          </Grid>
+        </Box>
       </div>
     );
   }

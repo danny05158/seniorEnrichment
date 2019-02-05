@@ -16,6 +16,7 @@ class TopFive extends Component {
       <div>
         <Heading level={2}>Welcome to the Aircraft Fanatics App</Heading>
         <Heading level={3}>Top Scoreboard of top 5 countries Global FirePower Index(GFI)</Heading>
+
         <Box pad="large">
           <Grid columns="small" gap="small">
             {this.props.topFive.map(country => (
@@ -23,6 +24,7 @@ class TopFive extends Component {
             ))}
           </Grid>
         </Box>
+        
       </div>
     );
   }
